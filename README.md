@@ -28,6 +28,8 @@ A robust, terminal-based Hotel Management application developed in Python and in
 <pre><code>Hotel-Management-System/
 │
 ├── Backends/                  # Core Python modules and application logic scripts
+│   └── db_operations.py
+│
 ├── Database_Docs/             # Architectural database blueprints & data records
 │   ├── database_tables_overview.png
 │   ├── customer_details_schema.jpg
