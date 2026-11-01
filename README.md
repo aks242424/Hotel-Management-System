@@ -1,36 +1,94 @@
 # Hotel Management System
 
-A robust, terminal-based Hotel Management application developed in Python and integrated with a relational SQL database. This system streamlines front-desk hotel operations ranging from customer onboarding to final check-out billing counter calculations.
+A Python-based, terminal-driven **Hotel Management System developed as my Class 12 school project**. The project was created to apply programming concepts and database management principles to a practical, real-world scenario.
+
+The application simulates essential hotel operations, including customer registration, room bookings, service billing, database management, and final checkout calculations.
+
+> **Project Background:** This was an academic project developed during Class 12. It represents my learning and practical application of Python programming, SQL database concepts, and problem-solving skills at the school level.
 
 ---
 
-## 🚀 Features
-* **Guest Onboarding:** Easily add and register new customer profiles with complete contact details.
-* **Room Bookings & Renting:** Allocate specific room classes (Ultra Royal, Royal, Elite, Budget) and dynamically track stay durations.
-* **Integrated Billing Counters:** Automatically calculates costs across separate hotel amenities:
-  * Room Tariff / Stay Duration Charges
-  * Restaurant & Cuisine Orders (Veg / Non-Veg combos)
-  * Gaming Zone Hours (Virtual Reality, Arcade, Racing, Escape Room)
-  * Fashion/Retail Counter Purchases
-* **Database Inquiries:** Instantly query historical guest profiles and generate consolidated final check-out invoices.
+## Project Objectives
+
+The main objectives of this project were to:
+
+- Apply Python programming concepts to build a practical application.
+- Understand how relational databases work.
+- Implement database operations using SQL.
+- Connect Python application logic with an SQLite database.
+- Organize hotel operations into separate functional modules.
+- Practise data storage, retrieval, calculations, and record management.
 
 ---
 
-## 🛠️ Tech Stack
-* **Language:** Python 3.13+
-* **Database Engine:** SQLite 3 (`HMS.db`)
-* **Development Environment:** IDLE / VS Code
+## Features
+
+### 1. Guest Management
+- Register new customers with their personal and contact details.
+- Store customer information in the database.
+- Search and retrieve existing customer records.
+
+### 2. Room Booking and Management
+- Allocate rooms based on different room categories:
+  - Ultra Royal
+  - Royal
+  - Elite
+  - Budget
+- Record booking dates and stay durations.
+- Calculate room charges based on the selected category and duration.
+
+### 3. Multiple Billing Counters
+
+The system includes separate billing modules for different hotel services.
+
+**Room Billing**
+- Room tariff calculations.
+- Stay-duration-based charges.
+
+**Restaurant Billing**
+- Veg and non-veg food options.
+- Restaurant order and billing calculations.
+
+**Gaming Zone Billing**
+- Virtual Reality
+- Arcade
+- Racing
+- Escape Room
+- Charges based on gaming hours.
+
+**Fashion and Retail Billing**
+- Record retail purchases.
+- Calculate product quantities and total costs.
+
+### 4. Customer Records and Final Billing
+- Retrieve previously stored customer information.
+- Generate consolidated bills.
+- Calculate the final checkout amount using the different service charges.
 
 ---
 
-## 📁 Repository Structure
+## Technology Stack
 
-<pre><code>Hotel-Management-System/
+| Technology | Purpose |
+|---|---|
+| Python 3.13+ | Application logic and programming |
+| SQLite 3 | Relational database management |
+| SQL | Database queries and operations |
+| IDLE / VS Code | Development environment |
+
+**External dependencies:** The project uses Python's built-in `sqlite3` module, so no separate database driver installation is required.
+
+---
+
+## Repository Structure
+
+```text
+Hotel-Management-System/
 │
-├── Backends/                  # Core Python modules and application logic scripts
+├── Backends/
 │   └── db_operations.py
 │
-├── Database_Docs/             # Architectural database blueprints & data records
+├── Database_Docs/
 │   ├── database_tables_overview.png
 │   ├── customer_details_schema.jpg
 │   ├── customer_details_records_part1.jpg
@@ -46,7 +104,7 @@ A robust, terminal-based Hotel Management application developed in Python and in
 │   ├── fashion_schema.jpg
 │   └── fashion_records.jpg
 │
-├── Outputs/                   # Step-by-step sequential CLI application walkthroughs
+├── Outputs/
 │   ├── 01_main_menu.png
 │   ├── 02_add_customer.png
 │   ├── 03_make_booking.png
@@ -58,46 +116,114 @@ A robust, terminal-based Hotel Management application developed in Python and in
 │   ├── 09_search_customer.png
 │   └── 10_system_exit.png
 │
-├── HMS.db                     # Active relational SQLite database file
-├── main.py                    # Main application execution entry point
-├── Project_Report.pdf         # Comprehensive final project documentation report
-├── LICENSE                    # Project distribution license (MIT)
-└── .gitignore                 # Spec file ensuring local tracking exclusions</code></pre>
+├── HMS.db
+├── main.py
+├── Project_Report.pdf
+├── LICENSE
+└── .gitignore
+```
 
 ---
 
-## 📊 Database Architecture
+## Database Architecture
 
-The application implements a relational database schema structured across 6 interlinked tables inside HMS.db:
+The application uses an SQLite relational database named `HMS.db`, organized into six tables.
 
-1. **C_DETAILS (Master Table):** Tracks core customer identification attributes (CID as Primary Key), home address profiles, age metrics, and personal communication paths.
-2. **ROOM_RENT:** Holds active real-time operational entries for assigned customer room configurations, stay tracking, and running price structures.
-3. **ROOM_BOOKINGS:** Manages analytical date-wise guest calendars containing historical reservation ranges (START_DATE, END_DATE) and gross pricing evaluations.
-4. **RESTAURANT:** Stores active dinner/meal ordering entries, table quantities, and calculated item totals.
-5. **GAMING:** Handles recreational zone hours logging, virtual category counters, and microtransaction billing values.
-6. **FASHION:** Logs physical retail shopping logs, apparel counter quantities, and total product costs.
+| Table | Description |
+|---|---|
+| `C_DETAILS` | Stores customer identification and personal details. |
+| `ROOM_RENT` | Stores room allocation, room categories, stay information, and rental charges. |
+| `ROOM_BOOKINGS` | Maintains booking dates, reservation details, and pricing information. |
+| `RESTAURANT` | Stores restaurant orders and calculated food charges. |
+| `GAMING` | Records gaming activities, hours, and associated charges. |
+| `FASHION` | Stores retail purchases, quantities, and product costs. |
 
-*Note: Visual structural layouts, structural rules, data constraints, and mock table entries are fully detailed inside the `/Database_Docs` folder.*
+### Database Documentation
+
+The `Database_Docs/` directory contains:
+- Database table overview.
+- Individual table schemas.
+- Sample database records.
+- Supporting database structure screenshots.
+
+These documents provide a visual reference for the database design and stored information.
 
 ---
 
-## 💻 How to Setup and Run
+## Application Screenshots
+
+The `Outputs/` directory contains screenshots documenting the application's execution flow, including:
+
+1. Main menu.
+2. Customer registration.
+3. Room booking.
+4. Room rent calculation.
+5. Restaurant billing.
+6. Gaming billing.
+7. Fashion billing.
+8. Final bill generation.
+9. Customer search.
+10. System exit.
+
+---
+
+## Installation and Execution
 
 ### Prerequisites
-Ensure you have Python 3.x installed on your workstation. The core database stack utilizes Python's native sqlite3 driver, meaning zero external database installation packages are mandatory.
 
-### Execution Instructions
+- Python 3.x installed.
+- Git installed (if cloning the repository).
 
-1. **Clone the repository to your desktop machine:**
-<pre><code>git clone https://github.com/YOUR_USERNAME/Hotel-Management-System.git</code></pre>
+The application uses Python's built-in SQLite support through `sqlite3`.
 
-2. **Navigate into the cloned root project directory:**
-<pre><code>cd Hotel-Management-System</code></pre>
+### 1. Clone the Repository
 
-3. **Execute the primary script interface entry point:**
-<pre><code>python main.py</code></pre>
+```bash
+git clone https://github.com/YOUR_USERNAME/Hotel-Management-System.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd Hotel-Management-System
+```
+
+### 3. Run the Application
+
+```bash
+python main.py
+```
+
+The terminal-based application will start from its main menu.
 
 ---
 
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for open-source usage and compliance details.
+## Skills and Concepts Practised
+
+Developing this project helped me practise and understand several programming and database concepts:
+
+- Python fundamentals and structured programming.
+- Functions, conditional statements, loops, and modular code organization.
+- SQL queries and relational database concepts.
+- SQLite database connectivity using Python.
+- Database table creation and record management.
+- Data insertion, retrieval, and updating.
+- Calculation and billing logic.
+- Organizing a multi-module application.
+- Testing application workflows and identifying errors.
+
+---
+
+## Academic Project and Acknowledgement
+
+This Hotel Management System was developed as **my Class 12 academic project** as part of my school-level programming and practical learning.
+
+The project was an opportunity to explore how programming and database concepts can be combined to create a functional application. It reflects my learning process, implementation efforts, and understanding of Python and SQL at that stage.
+
+The project is shared on GitHub for educational reference and to document my early programming work.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
